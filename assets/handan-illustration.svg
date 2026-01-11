@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-label="Handan illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e5e7eb" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#e5e7eb" stop-opacity="0.65"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" rx="28" fill="#0b1220"/>
+  <rect width="960" height="600" rx="28" fill="url(#bg)"/>
+  <g opacity="0.9">
+    <path d="M120 420c120-120 260-190 420-210 120-14 250 6 320 44" fill="none" stroke="url(#ink)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M180 440c90-160 220-250 380-280" fill="none" stroke="#60a5fa" stroke-width="8" stroke-linecap="round" opacity="0.55"/>
+    <path d="M510 132c24 16 46 38 62 64" fill="none" stroke="#34d399" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  <g>
+    <rect x="110" y="110" width="300" height="380" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+    <path d="M160 180h200" stroke="rgba(255,255,255,0.45)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M160 240h160" stroke="rgba(255,255,255,0.40)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M160 300h190" stroke="rgba(255,255,255,0.35)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M160 360h140" stroke="rgba(255,255,255,0.32)" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="356" cy="410" r="18" fill="#fbbf24" opacity="0.85"/>
+  </g>
+  <g transform="translate(470,160)">
+    <rect x="0" y="0" width="390" height="330" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+    <path d="M60 90c52-44 118-68 188-72 70-4 130 8 172 32" fill="none" stroke="rgba(255,255,255,0.50)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M78 226c80-110 190-156 308-152" fill="none" stroke="#34d399" stroke-width="8" stroke-linecap="round" opacity="0.55"/>
+    <path d="M78 252h282" stroke="rgba(255,255,255,0.30)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M78 286h240" stroke="rgba(255,255,255,0.26)" stroke-width="6" stroke-linecap="round"/>
+    <text x="40" y="52" font-family="ui-sans-serif,system-ui" font-size="28" fill="rgba(255,255,255,0.88)">成语</text>
+    <text x="106" y="52" font-family="ui-sans-serif,system-ui" font-size="18" fill="rgba(255,255,255,0.62)">chéngyǔ</text>
+  </g>
+</svg>
+

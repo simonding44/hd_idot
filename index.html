@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Handan Idioms • 邯郸成语之都</title>
+    <meta
+      name="description"
+      content="Handan (Hebei, China) is famed for Chinese idioms (chéngyǔ). Explore stories, history, and travel tips—bilingual in English and Chinese."
+    />
+    <meta property="og:title" content="Handan Idioms • 邯郸成语之都" />
+    <meta
+      property="og:description"
+      content="A bilingual guide to Handan—the home of many classic Chinese idiom stories."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-card.svg" />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer type="module" src="assets/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-elevate>
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Handan Idioms Home">
+          <img class="brand-mark" src="assets/favicon.svg" alt="" />
+          <span class="brand-text">
+            <span class="brand-title">Handan Idioms</span>
+            <span class="brand-subtitle" data-i18n="brand.subtitle">邯郸 · 成语之都</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-link" href="#about" data-i18n="nav.about">About</a>
+          <a class="nav-link" href="#idioms" data-i18n="nav.idioms">Idioms</a>
+          <a class="nav-link" href="#visit" data-i18n="nav.visit">Visit</a>
+          <a class="nav-link" href="#learn" data-i18n="nav.learn">Learn</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-ghost" type="button" id="langToggle" aria-label="Toggle language">
+            <span class="btn-icon" aria-hidden="true">A/文</span>
+            <span class="btn-label" id="langToggleLabel">中文</span>
+          </button>
+          <button class="btn btn-primary" type="button" id="shareBtn">
+            <span class="btn-icon" aria-hidden="true">↗</span>
+            <span class="btn-label" data-i18n="actions.share">Share</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="kicker" data-i18n="hero.kicker">Hebei, China • Culture & Stories</p>
+            <h1 class="hero-title" data-i18n="hero.title">
+              Handan — the city behind many Chinese idioms
+            </h1>
+            <p class="hero-lede" data-i18n="hero.lede">
+              Chinese idioms (chéngyǔ) are tiny stories with big meaning. Many classics are tied to the ancient Zhao
+              capital region—today’s Handan. Explore key idioms, learn the context, and plan a visit.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#idioms" data-i18n="hero.ctaPrimary">Explore idioms</a>
+              <a class="btn btn-ghost" href="#about" data-i18n="hero.ctaSecondary">Why Handan?</a>
+            </div>
+
+            <dl class="hero-stats" aria-label="Highlights">
+              <div class="stat">
+                <dt class="stat-label" data-i18n="hero.stat1.label">Bilingual</dt>
+                <dd class="stat-value" data-i18n="hero.stat1.value">EN / 中文</dd>
+              </div>
+              <div class="stat">
+                <dt class="stat-label" data-i18n="hero.stat2.label">Mobile-first</dt>
+                <dd class="stat-value" data-i18n="hero.stat2.value">Fast & responsive</dd>
+              </div>
+              <div class="stat">
+                <dt class="stat-label" data-i18n="hero.stat3.label">Story-driven</dt>
+                <dd class="stat-value" data-i18n="hero.stat3.value">Idioms explained</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-card" aria-label="Handan visual">
+            <div class="hero-card-top">
+              <span class="pill" data-i18n="hero.pill">Chéngyǔ • 成语</span>
+              <span class="pill pill-muted" data-i18n="hero.pill2">Zhao culture • 赵文化</span>
+            </div>
+            <div class="hero-card-main">
+              <img class="hero-illustration" src="assets/handan-illustration.svg" alt="" />
+              <div class="hero-card-caption">
+                <p class="hero-card-title" data-i18n="hero.card.title">A shortcut to culture</p>
+                <p class="hero-card-body" data-i18n="hero.card.body">
+                  Each idiom is a mini story: who, where, what happened, and what it means today.
+                </p>
+              </div>
+            </div>
+            <div class="hero-card-bottom" role="note">
+              <span class="note-dot" aria-hidden="true"></span>
+              <span data-i18n="hero.note">Tip: Tap “Listen” on an idiom to hear the Chinese (if your device supports it).</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container section-grid">
+          <div>
+            <h2 class="section-title" data-i18n="about.title">Why Handan matters</h2>
+            <p class="section-body" data-i18n="about.body1">
+              Handan is a historic city in southern Hebei Province. In the Warring States era, it served as the capital
+              of the State of Zhao—an influential center of politics, military reform, and scholarship.
+            </p>
+            <p class="section-body" data-i18n="about.body2">
+              Over centuries, stories set around Zhao’s court and daily life were distilled into four-character idioms.
+              Today, Handan is often called the “Capital of Chinese Idioms” because so many famous chéngyǔ are linked to
+              this place and period.
+            </p>
+          </div>
+
+          <div class="callout">
+            <h3 class="callout-title" data-i18n="about.callout.title">What is a chéngyǔ?</h3>
+            <p class="callout-body" data-i18n="about.callout.body">
+              A chéngyǔ is usually four Chinese characters that summarize a well-known story, lesson, or historical
+              episode. They’re used in writing and speech—similar to English expressions like “Achilles’ heel” or “the
+              straw that broke the camel’s back,” but often more condensed.
+            </p>
+            <ul class="callout-list">
+              <li data-i18n="about.callout.b1">Short form, rich backstory</li>
+              <li data-i18n="about.callout.b2">Used in news, books, and everyday talk</li>
+              <li data-i18n="about.callout.b3">A window into Chinese history</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="idioms">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title" data-i18n="idioms.title">Idiom Explorer</h2>
+              <p class="section-lede" data-i18n="idioms.lede">
+                Pick a card to get the story, meaning, modern usage, and pronunciation.
+              </p>
+            </div>
+            <div class="controls" role="search">
+              <label class="sr-only" for="searchInput" data-i18n="idioms.searchLabel">Search</label>
+              <input
+                id="searchInput"
+                class="input"
+                type="search"
+                autocomplete="off"
+                placeholder="Search (e.g., walk / jade / Zhao)…"
+              />
+              <select id="tagSelect" class="select" aria-label="Filter by theme">
+                <option value="all" data-i18n="idioms.filterAll">All themes</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid" id="idiomGrid" aria-live="polite"></div>
+
+          <div class="fineprint" data-i18n="idioms.fineprint">
+            Notes: Idiom origins can be complex. We focus on popular stories tied to the Zhao/Handan cultural sphere.
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="visit">
+        <div class="container section-grid">
+          <div>
+            <h2 class="section-title" data-i18n="visit.title">Visit Handan</h2>
+            <p class="section-body" data-i18n="visit.body1">
+              To many travelers, Handan is a “deep culture” destination: less crowded, more local, and rich in ancient
+              history. If you’re building a China itinerary beyond Beijing and Shanghai, it’s a meaningful stop.
+            </p>
+            <div class="list-cards">
+              <article class="mini-card">
+                <h3 class="mini-card-title" data-i18n="visit.card1.title">What to look for</h3>
+                <p class="mini-card-body" data-i18n="visit.card1.body">
+                  Zhao culture sites, idiom-themed streets and exhibits, local food, and everyday city life.
+                </p>
+              </article>
+              <article class="mini-card">
+                <h3 class="mini-card-title" data-i18n="visit.card2.title">How to visit</h3>
+                <p class="mini-card-body" data-i18n="visit.card2.body">
+                  Plan 1–2 days. Pair it with nearby Hebei/Shanxi cultural routes depending on your interests.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="map-card">
+            <div class="map-card-top">
+              <h3 class="map-card-title" data-i18n="visit.map.title">Where is Handan?</h3>
+              <p class="map-card-body" data-i18n="visit.map.body">
+                Handan is in southern Hebei Province, North China. Use the button below to open your map app.
+              </p>
+            </div>
+            <div class="map-card-actions">
+              <a class="btn btn-primary" id="mapLink" target="_blank" rel="noreferrer">
+                <span class="btn-icon" aria-hidden="true">🗺</span>
+                <span class="btn-label" data-i18n="visit.map.cta">Open in maps</span>
+              </a>
+              <button class="btn btn-ghost" type="button" id="copyLocationBtn">
+                <span class="btn-icon" aria-hidden="true">⧉</span>
+                <span class="btn-label" data-i18n="visit.map.copy">Copy location</span>
+              </button>
+            </div>
+            <p class="map-card-meta" id="mapMeta"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="learn">
+        <div class="container section-grid">
+          <div>
+            <h2 class="section-title" data-i18n="learn.title">Learn like a local</h2>
+            <p class="section-body" data-i18n="learn.body1">
+              For English speakers, the fastest way to enjoy chéngyǔ is: (1) learn the story in English, (2) remember the
+              key meaning, and (3) recognize the Chinese characters over time.
+            </p>
+            <div class="tips">
+              <div class="tip">
+                <h3 class="tip-title" data-i18n="learn.tip1.title">Think in scenes</h3>
+                <p class="tip-body" data-i18n="learn.tip1.body">
+                  Picture the story like a movie clip. The idiom is the “title” of that clip.
+                </p>
+              </div>
+              <div class="tip">
+                <h3 class="tip-title" data-i18n="learn.tip2.title">Use parallels</h3>
+                <p class="tip-body" data-i18n="learn.tip2.body">
+                  Map the meaning to an English phrase you already know: “lose your way,” “make amends,” “empty talk,” etc.
+                </p>
+              </div>
+              <div class="tip">
+                <h3 class="tip-title" data-i18n="learn.tip3.title">Start small</h3>
+                <p class="tip-body" data-i18n="learn.tip3.body">
+                  Learn 5 idioms well rather than 50 vaguely. Quality beats quantity.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz">
+            <h3 class="quiz-title" data-i18n="quiz.title">Mini Quiz</h3>
+            <p class="quiz-body" data-i18n="quiz.body">
+              Match the idiom to its modern meaning. (Just for fun—no pressure.)
+            </p>
+            <div class="quiz-panel" id="quizPanel"></div>
+            <div class="quiz-actions">
+              <button class="btn btn-primary" type="button" id="quizNewBtn" data-i18n="quiz.new">New question</button>
+              <button class="btn btn-ghost" type="button" id="quizRevealBtn" data-i18n="quiz.reveal">Reveal answer</button>
+            </div>
+            <p class="fineprint" id="quizResult" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-brand">
+            <img class="brand-mark" src="assets/favicon.svg" alt="" />
+            <div>
+              <div class="footer-title">Handan Idioms</div>
+              <div class="footer-sub" data-i18n="footer.subtitle">A bilingual cultural intro site</div>
+            </div>
+          </div>
+          <p class="footer-note" data-i18n="footer.note">
+            Built for international visitors. Feel free to adapt the content for exhibitions, schools, and cultural events.
+          </p>
+        </div>
+
+        <div class="footer-right">
+          <button class="btn btn-ghost" type="button" id="backToTopBtn" data-i18n="footer.backToTop">Back to top</button>
+          <a class="btn btn-ghost" href="README.md" data-i18n="footer.readme">Project README</a>
+        </div>
+      </div>
+    </footer>
+
+    <dialog class="dialog" id="idiomDialog" aria-label="Idiom details">
+      <form method="dialog" class="dialog-inner">
+        <button class="dialog-close" aria-label="Close">✕</button>
+        <div id="dialogContent"></div>
+        <div class="dialog-actions">
+          <button class="btn btn-primary" id="dialogListenBtn" type="button">
+            <span class="btn-icon" aria-hidden="true">🔊</span>
+            <span class="btn-label" data-i18n="actions.listen">Listen</span>
+          </button>
+          <button class="btn btn-ghost" id="dialogCopyBtn" type="button">
+            <span class="btn-icon" aria-hidden="true">⧉</span>
+            <span class="btn-label" data-i18n="actions.copy">Copy</span>
+          </button>
+          <button class="btn btn-ghost" value="close" data-i18n="actions.close">Close</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
+
