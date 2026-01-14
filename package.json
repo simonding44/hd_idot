@@ -1,0 +1,14 @@
+{
+  "name": "handan-idioms",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.57.0",
+    "dotenv": "^16.6.1"
+  }
+}

@@ -3,6 +3,7 @@ import { IDIOMS, TAGS } from "./content.js";
 
 const STORAGE_KEY_LANG = "handan_lang";
 const state = { lang: "en" };
+const authState = { enabled: true };
 
 function $(sel, root = document) {
   return root.querySelector(sel);
@@ -40,6 +41,8 @@ function applyLang(lang) {
 
   const toggleLabel = $("#langToggleLabel");
   if (toggleLabel) toggleLabel.textContent = lang === "zh" ? "English" : "中文";
+
+  authSetEnabled(authState.enabled);
 }
 
 function formatTag(lang, key) {
@@ -317,6 +320,106 @@ function setupBackToTop() {
   });
 }
 
+function authDisabledMessage(lang) {
+  return lang === "zh"
+    ? "登录暂不可用（请配置 SUPABASE_URL / SUPABASE_ANON_KEY）"
+    : "Sign-in is not configured (set SUPABASE_URL / SUPABASE_ANON_KEY).";
+}
+
+function authSetEnabled(enabled) {
+  const loginBtn = $("#loginBtn");
+  if (!loginBtn) return;
+
+  authState.enabled = Boolean(enabled);
+  loginBtn.disabled = !authState.enabled;
+
+  if (!authState.enabled) {
+    loginBtn.setAttribute("aria-disabled", "true");
+    loginBtn.title = authDisabledMessage(state.lang);
+  } else {
+    loginBtn.removeAttribute("aria-disabled");
+    loginBtn.title = "";
+  }
+}
+
+function maybeShowAuthErrorFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("authError");
+  if (!code) return;
+
+  if (code === "missing_supabase_env") {
+    toast(authDisabledMessage(state.lang));
+  } else {
+    toast(state.lang === "zh" ? "登录失败" : "Sign-in failed.");
+  }
+
+  params.delete("authError");
+  const next = window.location.pathname + (params.toString() ? `?${params.toString()}` : "") + window.location.hash;
+  history.replaceState({}, "", next);
+}
+
+function authRender(user) {
+  const loginBtn = $("#loginBtn");
+  const logoutBtn = $("#logoutBtn");
+  const authUser = $("#authUser");
+
+  if (!loginBtn || !logoutBtn || !authUser) return;
+
+  if (user) {
+    const label = user.email || user.user_metadata?.name || "Signed in";
+    authUser.textContent = label;
+    authUser.hidden = false;
+    loginBtn.hidden = true;
+    logoutBtn.hidden = false;
+  } else {
+    authUser.textContent = "";
+    authUser.hidden = true;
+    loginBtn.hidden = false;
+    logoutBtn.hidden = true;
+  }
+}
+
+async function authRefresh() {
+  try {
+    const res = await fetch("/auth/me", { headers: { "Cache-Control": "no-store" } });
+    const data = await res.json();
+    if (typeof data?.enabled === "boolean") authSetEnabled(data.enabled);
+    authRender(data?.user || null);
+  } catch {
+    authSetEnabled(false);
+    authRender(null);
+  }
+}
+
+function setupAuth() {
+  const loginBtn = $("#loginBtn");
+  const logoutBtn = $("#logoutBtn");
+
+  if (loginBtn) {
+    loginBtn.addEventListener("click", () => {
+      if (!authState.enabled) {
+        toast(authDisabledMessage(state.lang));
+        return;
+      }
+      const next = window.location.pathname + window.location.search + window.location.hash;
+      window.location.href = `/auth/login/google?next=${encodeURIComponent(next)}`;
+    });
+  }
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      try {
+        await fetch("/auth/logout", { method: "POST" });
+      } finally {
+        window.location.reload();
+      }
+    });
+  }
+
+  authRefresh();
+  maybeShowAuthErrorFromUrl();
+}
+
 function randomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -402,6 +505,7 @@ function init() {
 
   state.lang = getInitialLang();
   applyLang(state.lang);
+  setupAuth();
   renderTagOptions(state.lang);
   renderIdiomCards(state.lang);
   setupShare(state.lang);

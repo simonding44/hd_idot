@@ -6,6 +6,8 @@ export const I18N = {
     "nav.visit": "Visit",
     "nav.learn": "Learn",
     "actions.share": "Share",
+    "actions.signIn": "Sign in",
+    "actions.signOut": "Sign out",
     "actions.listen": "Listen",
     "actions.copy": "Copy",
     "actions.close": "Close",
@@ -80,6 +82,8 @@ export const I18N = {
     "nav.visit": "旅行建议",
     "nav.learn": "学习方法",
     "actions.share": "分享",
+    "actions.signIn": "登录",
+    "actions.signOut": "退出",
     "actions.listen": "朗读",
     "actions.copy": "复制",
     "actions.close": "关闭",
@@ -146,4 +150,3 @@ export const I18N = {
     "footer.readme": "项目说明",
   },
 };
-

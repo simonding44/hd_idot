@@ -38,3 +38,30 @@ node server.mjs
 - 文案翻译：`assets/i18n.js`
 - 样式：`assets/styles.css`
 - 交互逻辑：`assets/app.js`
+
+## Supabase Google 登录（服务器端）
+
+本项目已增加基于 Supabase 的 Google 登录（走服务器端回调 + `exchangeCodeForSession` 写入 Cookie）。
+
+### 1) 配置环境变量
+
+复制 `.env.example` 为 `.env`，并填写：
+
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+
+（可选）如果你线上域名不是通过当前请求自动推断出来的，可以显式设置：
+
+- `SUPABASE_REDIRECT_TO`（例如：`https://your-domain.com/auth/callback`）
+
+### 2) Supabase 控制台设置
+
+- Auth → Providers → 启用 Google，并配置 Client ID / Secret
+- Auth → URL Configuration
+  - Site URL：你的站点域名（本地可用 `http://localhost:5173`）
+  - Redirect URLs：添加 `http://localhost:5173/auth/callback`（以及你的线上回调 URL）
+
+### 3) 使用
+
+- 页面右上角点击“登录”会跳转到 Google 授权
+- 登录完成后会回到站点，右上角会显示邮箱，并可“退出”

@@ -179,6 +179,16 @@ a {
   gap: 0.6rem;
 }
 
+.auth-user {
+  max-width: 18ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -788,4 +798,3 @@ a {
     grid-template-columns: 1fr;
   }
 }
-
