@@ -54,8 +54,21 @@ export function getAuthConfig(req, res) {
 
   // Prefer origin-based redirect so it works for preview + production domains.
   const origin = getRequestOrigin(req);
-  const redirectTo = process.env.SUPABASE_REDIRECT_TO || `${origin}/auth/callback`;
+  const fallbackRedirectTo = `${origin}/auth/callback`;
+  let redirectTo = process.env.SUPABASE_REDIRECT_TO || fallbackRedirectTo;
+
+  // Guardrail: a common misconfig is leaving a localhost redirect in production env.
+  if (IS_PROD) {
+    try {
+      const u = new URL(redirectTo);
+      if (u.hostname === "localhost" || u.hostname === "127.0.0.1") {
+        redirectTo = fallbackRedirectTo;
+      }
+    } catch {
+      // If SUPABASE_REDIRECT_TO is invalid, fall back safely.
+      redirectTo = fallbackRedirectTo;
+    }
+  }
 
   return { enabled: true, supabase, commitCookies, redirectTo };
 }
-

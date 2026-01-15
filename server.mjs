@@ -128,7 +128,20 @@ async function handleAuthRoute(req, res, url) {
 
   // Prefer origin-based redirect so it works for localhost + production domains.
   const origin = getRequestOrigin(req);
-  const redirectTo = process.env.SUPABASE_REDIRECT_TO || `${origin}/auth/callback`;
+  const fallbackRedirectTo = `${origin}/auth/callback`;
+  let redirectTo = process.env.SUPABASE_REDIRECT_TO || fallbackRedirectTo;
+
+  // Guardrail: avoid accidentally using a localhost redirect in production.
+  if (IS_PROD) {
+    try {
+      const u = new URL(redirectTo);
+      if (u.hostname === "localhost" || u.hostname === "127.0.0.1") {
+        redirectTo = fallbackRedirectTo;
+      }
+    } catch {
+      redirectTo = fallbackRedirectTo;
+    }
+  }
 
   if (url.pathname === "/auth/login/google" && req.method === "GET") {
     const next = url.searchParams.get("next") || "/";
